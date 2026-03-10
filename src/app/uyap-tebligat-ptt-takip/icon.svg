@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C0392B"/>
+      <stop offset="100%" style="stop-color:#8B1A10"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000040"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+
+  <!-- Envelope body -->
+  <rect x="18" y="38" width="72" height="52" rx="5" fill="white" opacity="0.95"/>
+  <!-- Envelope flap lines -->
+  <polyline points="18,38 54,68 90,38" fill="none" stroke="#C0392B" stroke-width="3.5" stroke-linejoin="round"/>
+  <line x1="18" y1="90" x2="44" y2="65" stroke="#C0392B" stroke-width="2.5"/>
+  <line x1="90" y1="90" x2="64" y2="65" stroke="#C0392B" stroke-width="2.5"/>
+
+  <!-- Barcode stripes on envelope -->
+  <rect x="27" y="74" width="3" height="10" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="33" y="72" width="2" height="12" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="38" y="74" width="4" height="10" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="45" y="73" width="2" height="11" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="50" y="74" width="3" height="10" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="56" y="72" width="2" height="12" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="61" y="74" width="4" height="10" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="68" y="73" width="2" height="11" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="73" y="74" width="3" height="10" rx="1" fill="#C0392B" opacity="0.5"/>
+  <rect x="79" y="72" width="2" height="12" rx="1" fill="#C0392B" opacity="0.5"/>
+
+  <!-- Magnifier -->
+  <circle cx="96" cy="88" r="18" fill="#2C3E50"/>
+  <circle cx="94" cy="86" r="11" fill="none" stroke="white" stroke-width="3.5"/>
+  <line x1="102" y1="94" x2="110" y2="103" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Small barcode in magnifier -->
+  <rect x="89" y="82" width="2" height="8" rx="0.5" fill="white" opacity="0.8"/>
+  <rect x="93" y="81" width="1.5" height="9" rx="0.5" fill="white" opacity="0.8"/>
+  <rect x="97" y="82" width="2" height="8" rx="0.5" fill="white" opacity="0.8"/>
+</svg>
