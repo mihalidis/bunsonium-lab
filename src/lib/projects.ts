@@ -26,12 +26,22 @@ export const projects: Project[] = [
   {
     slug: 'happy-little-ipsum',
     title: 'Happy Little Ipsum',
-    desc: 'Bob Ross quotes-powered Lorem Ipsum generator. Two modes, one-click copy, free forever.',
+    desc: 'Bob Ross quotes-powered Lorem Ipsum generator. Two modes, one-click copy.',
     icon: '🎨',
     tag: 'Web App',
     accent: '#4a7c59',
     techs: ['Next.js', 'TypeScript', 'Bob Ross'],
     status: 'live',
     url: 'https://happy-little-ipsum.vercel.app',
+  },
+  {
+    slug: 'inventqry',
+    title: 'InventQRy',
+    desc: 'QR code-powered home inventory app. Stick a code on any shelf, scan to see what\'s inside.',
+    icon: '📦',
+    tag: 'Mobile App',
+    accent: '#4a7fd4',
+    techs: ['React Native', 'QR Codes', 'iOS & Android'],
+    status: 'in progress',
   },
 ]

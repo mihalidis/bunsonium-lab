@@ -37,9 +37,9 @@ export default function HomePage() {
         <section id="projeler" className={styles.projectsSection}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionLabel}>Projects</div>
-            <h2 className={styles.sectionTitle}>One Down.</h2>
+            <h2 className={styles.sectionTitle}>Making Things.</h2>
             <p className={styles.sectionDesc}>
-              More on the way. This one started with a real problem at work.
+              More on the way. Each one started with a real problem.
             </p>
           </div>
 
