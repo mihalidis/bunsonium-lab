@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Bebas_Neue, Syne } from 'next/font/google'
+import { Bebas_Neue, Syne, Pacifico, Lora } from 'next/font/google'
 import './globals.css'
 
 const bebasNeue = Bebas_Neue({
@@ -16,6 +16,20 @@ const syne = Syne({
   display: 'swap',
 })
 
+const pacifico = Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-pacifico',
+  display: 'swap',
+})
+
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-lora',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'Bunsonium Lab',
   description: "Pınar's project lab.",
@@ -28,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${bebasNeue.variable} ${syne.variable}`}>
+      <body className={`${bebasNeue.variable} ${syne.variable} ${pacifico.variable} ${lora.variable}`}>
         {children}
       </body>
     </html>

@@ -23,4 +23,15 @@ export const projects: Project[] = [
     techs: ['Chrome API', 'Vanilla JS', 'PTT'],
     status: 'testing',
   },
+  {
+    slug: 'happy-little-ipsum',
+    title: 'Happy Little Ipsum',
+    desc: 'Bob Ross quotes-powered Lorem Ipsum generator. Two modes, one-click copy, free forever.',
+    icon: '🎨',
+    tag: 'Web App',
+    accent: '#4a7c59',
+    techs: ['Next.js', 'TypeScript', 'Bob Ross'],
+    status: 'live',
+    url: 'https://happy-little-ipsum.vercel.app',
+  },
 ]
