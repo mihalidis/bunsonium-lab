@@ -44,4 +44,14 @@ export const projects: Project[] = [
     techs: ['React Native', 'QR Codes', 'iOS & Android'],
     status: 'in progress',
   },
+  {
+    slug: 'piksel-pak',
+    title: 'Piksel Pak',
+    desc: 'Turn home chores into 16-bit quests. Daily, weekly & monthly cleaning routines — gamified.',
+    icon: '🐢',
+    tag: 'Mobile App',
+    accent: '#4ade80',
+    techs: ['React Native', 'Pixel Art', 'iOS & Android'],
+    status: 'in progress',
+  },
 ]
