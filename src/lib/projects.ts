@@ -54,4 +54,15 @@ export const projects: Project[] = [
     techs: ['React Native', 'Pixel Art', 'iOS & Android'],
     status: 'in progress',
   },
+  {
+    slug: 'ghosty-raffle',
+    title: 'GhostyRaffle',
+    desc: 'A pixel-art secret gift exchange app where no one — not even the host — can see who got matched.',
+    icon: '👻',
+    tag: 'Web App',
+    accent: '#a855f7',
+    techs: ['Next.js', 'TypeScript', 'Resend'],
+    status: 'live',
+    url: 'https://ghosty-raffle.vercel.app',
+  },
 ]
