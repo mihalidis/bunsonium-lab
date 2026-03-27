@@ -35,7 +35,7 @@ export default function InventQRyPage() {
 
             <div className={styles.heroBadge}>
               <span className={styles.badgePulse} />
-              <span>Mobile App · React Native · In Development</span>
+              <span>Mobile App · React Native · Testing</span>
             </div>
 
             <h1 className={styles.heroTitle}>

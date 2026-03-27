@@ -196,6 +196,18 @@
   border: 1px solid var(--border);
 }
 
+.status_in_review {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.1);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+.status_archived {
+  color: #78716c;
+  background: rgba(120, 113, 108, 0.1);
+  border: 1px solid rgba(120, 113, 108, 0.2);
+}
+
 .cardIcon { font-size: 34px; }
 
 .cardTag {

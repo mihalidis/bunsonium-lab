@@ -1,4 +1,4 @@
-export type ProjectStatus = 'live' | 'testing' | 'in progress' | 'paused'
+export type ProjectStatus = 'live' | 'testing' | 'in progress' | 'paused' | 'in review' | 'archived'
 
 export interface Project {
   slug: string
@@ -21,7 +21,7 @@ export const projects: Project[] = [
     tag: 'Chrome Extension',
     accent: '#C0392B',
     techs: ['Chrome API', 'Vanilla JS', 'PTT'],
-    status: 'testing',
+    status: 'in review',
   },
   {
     slug: 'happy-little-ipsum',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     tag: 'Mobile App',
     accent: '#4a7fd4',
     techs: ['React Native', 'QR Codes', 'iOS & Android'],
-    status: 'in progress',
+    status: 'testing',
   },
   {
     slug: 'piksel-pak',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     tag: 'Mobile App',
     accent: '#4ade80',
     techs: ['React Native', 'Pixel Art', 'iOS & Android'],
-    status: 'in progress',
+    status: 'paused',
   },
   {
     slug: 'ghosty-raffle',
