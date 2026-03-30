@@ -5,6 +5,9 @@ import AppFooter from '@/components/AppFooter'
 import ChromeButton from '@/components/ChromeButton'
 import styles from './page.module.css'
 
+const CHROME_WEB_STORE_URL =
+  'https://chromewebstore.google.com/detail/uyap-tebligat-ptt-takip/fonpafengkihaalljejgnpghgjbdlfpo'
+
 export const metadata: Metadata = {
   title: 'UYAP Tebligat PTT Takip — Ücretsiz Chrome Uzantısı',
   description:
@@ -55,7 +58,7 @@ export default function UyapPage() {
             </p>
 
             <div className={styles.heroActions}>
-              <ChromeButton />
+              <ChromeButton href={CHROME_WEB_STORE_URL} />
               <a href="#nasil-calisir" className={styles.btnSecondary}>
                 Nasıl çalışır? →
               </a>
@@ -158,7 +161,10 @@ export default function UyapPage() {
             <p className={styles.ctaDesc}>
               UYAP tebligat takibinde bir kez daha tab açma, elle kod kopyalama devri bitti.
             </p>
-            <ChromeButton label="Chrome Web Store'dan Ücretsiz Ekle" />
+            <ChromeButton
+              label="Chrome Web Store'dan Ücretsiz Ekle"
+              href={CHROME_WEB_STORE_URL}
+            />
           </div>
         </section>
       </div>

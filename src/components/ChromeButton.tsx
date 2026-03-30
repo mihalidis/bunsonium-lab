@@ -3,17 +3,37 @@
 import { useState } from 'react'
 import styles from './ChromeButton.module.css'
 
-export default function ChromeButton({ label = "Chrome'a Ücretsiz Ekle" }: { label?: string }) {
+type ChromeButtonProps = { label?: string; href?: string }
+
+export default function ChromeButton({ label = "Chrome'a Ücretsiz Ekle", href }: ChromeButtonProps) {
   const [open, setOpen] = useState(false)
+
+  const icon = (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  )
+
+  if (href) {
+    return (
+      <a
+        className={styles.btnPrimary}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {icon}
+        {label}
+      </a>
+    )
+  }
 
   return (
     <>
       <button className={styles.btnPrimary} onClick={() => setOpen(true)}>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-          <polyline points="7 10 12 15 17 10" />
-          <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
+        {icon}
         {label}
       </button>
 

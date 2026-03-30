@@ -21,7 +21,7 @@ export const projects: Project[] = [
     tag: 'Chrome Extension',
     accent: '#C0392B',
     techs: ['Chrome API', 'Vanilla JS', 'PTT'],
-    status: 'in review',
+    status: 'live',
   },
   {
     slug: 'happy-little-ipsum',
