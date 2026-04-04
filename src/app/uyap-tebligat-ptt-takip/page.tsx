@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import AppNav from '@/components/AppNav'
 import AppFooter from '@/components/AppFooter'
@@ -70,14 +71,35 @@ export default function UyapPage() {
                 <div className={styles.browserDots}>
                   <span /><span /><span />
                 </div>
-                <div className={styles.browserUrl}>uyap.uyap.gov.tr/</div>
+                <div className={styles.browserUrl}>avukat.uyap.gov.tr/</div>
                 <div className={styles.extBadge}>
                   <UyapIcon size={14} />
                   <span>Takip</span>
                 </div>
               </div>
               <div className={styles.browserContent}>
-                <PopupSim />
+                <div className={styles.screenshotRow}>
+                  <div className={styles.screenshotFrame}>
+                    <Image
+                      src="/uyapextentionassets/screenshot1.png"
+                      alt="UYAP tebligat belgesi ve PTT barkod alanı"
+                      fill
+                      sizes="(max-width: 520px) 100vw, (max-width: 980px) 46vw, 440px"
+                      className={styles.screenshotImg}
+                      priority
+                    />
+                  </div>
+                  <div className={styles.screenshotFrame}>
+                    <Image
+                      src="/uyapextentionassets/screenshot2.png"
+                      alt="Uzantı penceresinde PTT gönderi durumu ve zaman çizelgesi"
+                      fill
+                      sizes="(max-width: 520px) 100vw, (max-width: 980px) 46vw, 440px"
+                      className={styles.screenshotImg}
+                    />
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -190,33 +212,6 @@ function UyapIcon({ size = 24 }: { size?: number }) {
       <rect x="93" y="81" width="1.5" height="12" rx="0.5" fill="white" opacity="0.9" />
       <rect x="97" y="82" width="2" height="10" rx="0.5" fill="white" opacity="0.9" />
     </svg>
-  )
-}
-
-function PopupSim() {
-  return (
-    <div className={styles.popupSim}>
-      <div className={styles.popupHeader}>
-        <div className={styles.popupHeaderIcon}><UyapIcon size={28} /></div>
-        <div>
-          <div className={styles.popupHeaderTitle}>UYAP Tebligat PTT Takip</div>
-          <div className={styles.popupHeaderSub}>Tebligat barkodunu otomatik okur ve sorgular</div>
-        </div>
-      </div>
-      <div className={styles.popupBody}>
-        <div className={styles.popupFieldLabel}>Tespit Edilen Barkod No</div>
-        <div className={styles.popupBarcode}>27893964198 41</div>
-        <button className={styles.popupBtn}>🔍 &nbsp;Tekrar Sorgula</button>
-        <div className={styles.popupResult}>
-          <span>✅</span>
-          <div>
-            <div className={styles.resultTitle}>PTT: Teslim Edildi</div>
-            <div className={styles.resultSub}>15.06.2025 · 10:42 · Alıcıya teslim edildi</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.popupFooter}>Yalnızca uyap.gov.tr domaininde çalışır</div>
-    </div>
   )
 }
 
