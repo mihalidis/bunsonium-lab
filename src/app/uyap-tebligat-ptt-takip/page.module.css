@@ -493,12 +493,12 @@
   font-family: var(--font-bebas), sans-serif;
   font-size: 72px;
   line-height: 1;
-  color: rgba(192,57,43,0.12);
+  color: rgba(192,57,43,0.30);
   margin-bottom: 12px;
   transition: color 0.3s;
 }
 
-.stepCard:hover .stepNumBig { color: rgba(192,57,43,0.28); }
+.stepCard:hover .stepNumBig { color: rgba(192,57,43,0.50); }
 
 .stepIconWrap {
   font-size: 26px;

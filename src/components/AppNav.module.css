@@ -11,7 +11,7 @@
 }
 
 .scrolled {
-  background: rgba(13, 13, 13, 0.85);
+  background: rgba(22, 10, 36, 0.75);
   border-color: var(--border);
   backdrop-filter: blur(16px);
 }

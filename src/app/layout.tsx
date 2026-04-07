@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Bebas_Neue, Syne, Pacifico, Lora } from 'next/font/google'
+import MoleculeBackground from '@/components/MoleculeBackground'
 import './globals.css'
 
 const bebasNeue = Bebas_Neue({
@@ -43,7 +44,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bebasNeue.variable} ${syne.variable} ${pacifico.variable} ${lora.variable}`}>
-        {children}
+        <MoleculeBackground />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          {children}
+        </div>
       </body>
     </html>
   )
