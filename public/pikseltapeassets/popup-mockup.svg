@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 520" width="320" height="520">
+  <defs>
+    <linearGradient id="headerBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F0FF"/>
+      <stop offset="100%" stop-color="#EDE5FF"/>
+    </linearGradient>
+    <linearGradient id="bodyBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FDFCFF"/>
+      <stop offset="100%" stop-color="#F9F6FF"/>
+    </linearGradient>
+    <linearGradient id="logoIconBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4B8FF"/>
+      <stop offset="100%" stop-color="#B98EFF"/>
+    </linearGradient>
+    <filter id="popupShadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#7C4DFF" flood-opacity="0.18"/>
+    </filter>
+    <filter id="btnShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#7C4DFF" flood-opacity="0.10"/>
+    </filter>
+    <clipPath id="card">
+      <rect width="320" height="520" rx="22" ry="22"/>
+    </clipPath>
+  </defs>
+
+  <!-- Card base -->
+  <rect width="320" height="520" rx="22" ry="22" fill="url(#bodyBg)" filter="url(#popupShadow)"/>
+
+  <!-- ── HEADER AREA ─────────────────────────── -->
+  <rect width="320" height="195" fill="url(#headerBg)" clip-path="url(#card)"/>
+
+  <!-- Subtle grid dots in header bg -->
+  <g opacity="0.18" fill="#9575CD">
+    <circle cx="30"  cy="22"  r="1.5"/><circle cx="60"  cy="22"  r="1.5"/><circle cx="90"  cy="22"  r="1.5"/>
+    <circle cx="120" cy="22"  r="1.5"/><circle cx="150" cy="22"  r="1.5"/><circle cx="180" cy="22"  r="1.5"/>
+    <circle cx="210" cy="22"  r="1.5"/><circle cx="240" cy="22"  r="1.5"/><circle cx="270" cy="22"  r="1.5"/>
+    <circle cx="300" cy="22"  r="1.5"/>
+    <circle cx="30"  cy="46"  r="1.5"/><circle cx="60"  cy="46"  r="1.5"/><circle cx="90"  cy="46"  r="1.5"/>
+    <circle cx="120" cy="46"  r="1.5"/><circle cx="150" cy="46"  r="1.5"/><circle cx="180" cy="46"  r="1.5"/>
+    <circle cx="210" cy="46"  r="1.5"/><circle cx="240" cy="46"  r="1.5"/><circle cx="270" cy="46"  r="1.5"/>
+    <circle cx="300" cy="46"  r="1.5"/>
+  </g>
+
+  <!-- Logo icon: rounded square with tape icon -->
+  <rect x="120" y="28" width="42" height="42" rx="12" fill="url(#logoIconBg)"/>
+  <!-- Tape reel body -->
+  <rect x="128" y="36" width="26" height="22" rx="5" fill="white" opacity="0.9"/>
+  <!-- Tape holes -->
+  <circle cx="134" cy="47" r="3.5" fill="url(#logoIconBg)"/>
+  <circle cx="147" cy="47" r="3.5" fill="url(#logoIconBg)"/>
+  <!-- Tape strip -->
+  <rect x="128" y="51" width="26" height="4" rx="2" fill="white" opacity="0.6"/>
+  <!-- Tick marks on tape -->
+  <line x1="133" y1="51" x2="133" y2="55" stroke="#B98EFF" stroke-width="1" opacity="0.7"/>
+  <line x1="138" y1="51" x2="138" y2="55" stroke="#B98EFF" stroke-width="1" opacity="0.7"/>
+  <line x1="143" y1="51" x2="143" y2="55" stroke="#B98EFF" stroke-width="1" opacity="0.7"/>
+  <line x1="148" y1="51" x2="148" y2="55" stroke="#B98EFF" stroke-width="1" opacity="0.7"/>
+
+  <!-- App name -->
+  <text x="160" y="82" font-family="'Nunito', 'Segoe UI', system-ui, sans-serif" font-weight="800" font-size="19" fill="#3D1A78" text-anchor="middle" letter-spacing="-0.3">PixelTape</text>
+
+  <!-- Subtitle -->
+  <text x="160" y="100" font-family="'Nunito', system-ui, sans-serif" font-weight="400" font-size="11" fill="#9B8FBB" text-anchor="middle" letter-spacing="0.2">Measure · Pick Colors · Outline</text>
+
+  <!-- ── THREE TOOL BUTTONS ───────────────────── -->
+
+  <!-- Ruler button -->
+  <rect x="16" y="118" width="85" height="68" rx="16" fill="#EAE5FF" filter="url(#btnShadow)"/>
+  <!-- Ruler icon: triangle set square -->
+  <polygon points="43,130 66,130 66,153" fill="none" stroke="#6C47CC" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="43" y1="153" x2="66" y2="153" stroke="#6C47CC" stroke-width="2" stroke-linecap="round"/>
+  <!-- Tick marks on hypotenuse -->
+  <line x1="55" y1="133" x2="57" y2="135" stroke="#6C47CC" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="60" y1="138" x2="62" y2="140" stroke="#6C47CC" stroke-width="1.2" stroke-linecap="round"/>
+  <text x="58" y="178" font-family="'Nunito', system-ui, sans-serif" font-weight="700" font-size="11.5" fill="#4A2FA0" text-anchor="middle">Ruler</text>
+
+  <!-- Color Picker button -->
+  <rect x="118" y="118" width="85" height="68" rx="16" fill="#FFE4EF" filter="url(#btnShadow)"/>
+  <!-- Palette icon -->
+  <ellipse cx="160" cy="141" rx="13" ry="12" fill="none" stroke="#CC4477" stroke-width="2"/>
+  <!-- Color blobs on palette -->
+  <circle cx="153" cy="136" r="3" fill="#FF6B9D"/>
+  <circle cx="162" cy="133" r="3" fill="#FFA0C0"/>
+  <circle cx="169" cy="138" r="3" fill="#FFD0E0"/>
+  <circle cx="167" cy="147" r="3" fill="#FF8FAF"/>
+  <!-- Thumb hole -->
+  <circle cx="155" cy="147" r="3" fill="white"/>
+  <!-- Dropper handle -->
+  <line x1="170" y1="148" x2="175" y2="153" stroke="#CC4477" stroke-width="2" stroke-linecap="round"/>
+  <text x="160" y="178" font-family="'Nunito', system-ui, sans-serif" font-weight="700" font-size="11.5" fill="#A0235A" text-anchor="middle">Color Picker</text>
+
+  <!-- Outline button -->
+  <rect x="220" y="118" width="85" height="68" rx="16" fill="#E0F5EE" filter="url(#btnShadow)"/>
+  <!-- Outline mode icon: nested boxes -->
+  <rect x="244" y="130" width="28" height="22" rx="4" fill="none" stroke="#2A9E6A" stroke-width="2"/>
+  <rect x="249" y="135" width="8" height="6" rx="2" fill="none" stroke="#2A9E6A" stroke-width="1.3"/>
+  <rect x="259" y="135" width="8" height="6" rx="2" fill="none" stroke="#2A9E6A" stroke-width="1.3"/>
+  <rect x="249" y="143" width="18" height="5" rx="2" fill="none" stroke="#2A9E6A" stroke-width="1.3"/>
+  <text x="262" y="178" font-family="'Nunito', system-ui, sans-serif" font-weight="700" font-size="11.5" fill="#1A7A50" text-anchor="middle">Outline</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="200" x2="296" y2="200" stroke="#E8E0F5" stroke-width="1"/>
+
+  <!-- ── AUTO-COPY FORMAT ──────────────────────── -->
+  <text x="24" y="222" font-family="'Nunito', system-ui, sans-serif" font-weight="700" font-size="9.5" fill="#9B8FBB" letter-spacing="1.2">AUTO-COPY FORMAT:</text>
+
+  <!-- HEX pill — active/selected -->
+  <rect x="24" y="230" width="52" height="26" rx="13" fill="#FF6B9D"/>
+  <text x="50" y="247" font-family="'Nunito', system-ui, sans-serif" font-weight="700" font-size="11" fill="white" text-anchor="middle">HEX</text>
+
+  <!-- RGB pill -->
+  <rect x="82" y="230" width="52" height="26" rx="13" fill="white" stroke="#E0D8F0" stroke-width="1.5"/>
+  <text x="108" y="247" font-family="'Nunito', system-ui, sans-serif" font-weight="600" font-size="11" fill="#7B6BAA" text-anchor="middle">RGB</text>
+
+  <!-- HSL pill -->
+  <rect x="140" y="230" width="52" height="26" rx="13" fill="white" stroke="#E0D8F0" stroke-width="1.5"/>
+  <text x="166" y="247" font-family="'Nunito', system-ui, sans-serif" font-weight="600" font-size="11" fill="#7B6BAA" text-anchor="middle">HSL</text>
+
+  <!-- RGBA pill -->
+  <rect x="198" y="230" width="52" height="26" rx="13" fill="white" stroke="#E0D8F0" stroke-width="1.5"/>
+  <text x="224" y="247" font-family="'Nunito', system-ui, sans-serif" font-weight="600" font-size="11" fill="#7B6BAA" text-anchor="middle">RGBA</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="272" x2="296" y2="272" stroke="#E8E0F5" stroke-width="1"/>
+
+  <!-- ── SAVED COLORS ─────────────────────────── -->
+  <text x="24" y="292" font-family="'Nunito', system-ui, sans-serif" font-weight="700" font-size="9.5" fill="#9B8FBB" letter-spacing="1.2">SAVED COLORS</text>
+
+  <!-- Empty state -->
+  <!-- Sparkle icon -->
+  <g transform="translate(136, 340)">
+    <!-- Center glow -->
+    <circle cx="24" cy="24" r="16" fill="#F3EEFF" opacity="0.6"/>
+    <!-- Sparkle lines -->
+    <line x1="24" y1="10" x2="24" y2="38" stroke="#C4B0E8" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="10" y1="24" x2="38" y2="24" stroke="#C4B0E8" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="14" y1="14" x2="34" y2="34" stroke="#C4B0E8" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="34" y1="14" x2="14" y2="34" stroke="#C4B0E8" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Center star -->
+    <circle cx="24" cy="24" r="4" fill="#D4B8FF"/>
+    <!-- Small sparkle dots -->
+    <circle cx="24" cy="12" r="2.5" fill="#D4B8FF"/>
+    <circle cx="24" cy="36" r="2.5" fill="#D4B8FF"/>
+    <circle cx="12" cy="24" r="2.5" fill="#D4B8FF"/>
+    <circle cx="36" cy="24" r="2.5" fill="#D4B8FF"/>
+  </g>
+
+  <text x="160" y="404" font-family="'Nunito', system-ui, sans-serif" font-weight="500" font-size="12" fill="#BDB0D8" text-anchor="middle">Picked colors will appear here</text>
+
+  <!-- ── FOOTER ───────────────────────────────── -->
+  <line x1="24" y1="460" x2="296" y2="460" stroke="#E8E0F5" stroke-width="1"/>
+
+  <!-- Lock icon -->
+  <rect x="24" y="472" width="10" height="8" rx="2" fill="none" stroke="#9B8FBB" stroke-width="1.3"/>
+  <path d="M27 472 v-3 a3 3 0 0 1 6 0 v3" fill="none" stroke="#9B8FBB" stroke-width="1.3" stroke-linecap="round"/>
+  <circle cx="29" cy="476" r="1" fill="#9B8FBB"/>
+
+  <text x="39" y="480" font-family="'Nunito', system-ui, sans-serif" font-size="10" fill="#9B8FBB">No data collected · 100% private</text>
+
+  <!-- Lang switcher -->
+  <rect x="240" y="468" width="56" height="18" rx="9" fill="white" stroke="#E0D8F0" stroke-width="1.2"/>
+  <text x="258" y="480" font-family="'Nunito', system-ui, sans-serif" font-weight="600" font-size="9.5" fill="#9B8FBB" text-anchor="middle">TR</text>
+  <line x1="265" y1="472" x2="265" y2="482" stroke="#E0D8F0" stroke-width="1"/>
+  <text x="279" y="480" font-family="'Nunito', system-ui, sans-serif" font-weight="700" font-size="9.5" fill="#6C47CC" text-anchor="middle">EN</text>
+
+  <!-- Bottom radius fill -->
+  <rect x="0" y="497" width="320" height="23" rx="0" fill="url(#bodyBg)" clip-path="url(#card)"/>
+</svg>

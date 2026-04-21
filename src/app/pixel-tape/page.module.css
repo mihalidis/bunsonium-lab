@@ -264,8 +264,8 @@
 .popupImg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
 }
 
 .hexBadge {
@@ -400,7 +400,6 @@
   width: 54px;
   height: 54px;
   border-radius: 14px;
-  font-size: 26px;
   margin-bottom: 22px;
 }
 .lavender .featureIcon { background: var(--lav-100); }
@@ -463,8 +462,11 @@
   margin-bottom: 18px;
 }
 .stepIcon {
-  font-size: 30px;
+  display: flex;
+  align-items: center;
   margin-bottom: 14px;
+  width: 28px;
+  height: 28px;
 }
 .stepTitle {
   font-size: 19px;

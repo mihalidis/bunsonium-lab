@@ -104,7 +104,7 @@ export default function PixelTapePage() {
               <div className={styles.floatWrap}>
                 <div className={styles.popupCard}>
                   <Image
-                    src="/pikseltapeassets/app-popup-screenshot-3.png"
+                    src="/pikseltapeassets/popup-mockup.svg"
                     alt="PixelTape popup interface"
                     width={320}
                     height={520}
@@ -367,23 +367,84 @@ function GithubIcon() {
 
 /* ── Static data ─────────────────────────────── */
 
+const RulerIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="8" width="24" height="12" rx="3" stroke="#7C4DFF" strokeWidth="1.8"/>
+    <line x1="7"  y1="8"  x2="7"  y2="13" stroke="#7C4DFF" strokeWidth="1.5" strokeLinecap="round"/>
+    <line x1="11" y1="8"  x2="11" y2="12" stroke="#7C4DFF" strokeWidth="1.3" strokeLinecap="round"/>
+    <line x1="15" y1="8"  x2="15" y2="13" stroke="#7C4DFF" strokeWidth="1.5" strokeLinecap="round"/>
+    <line x1="19" y1="8"  x2="19" y2="12" stroke="#7C4DFF" strokeWidth="1.3" strokeLinecap="round"/>
+    <line x1="23" y1="8"  x2="23" y2="13" stroke="#7C4DFF" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+)
+
+const ColorPickerIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="13" cy="13" r="9" stroke="#E91E8C" strokeWidth="1.8"/>
+    <circle cx="9"  cy="10" r="2.5" fill="#FF80AB"/>
+    <circle cx="14" cy="7"  r="2.5" fill="#F48FB1"/>
+    <circle cx="18" cy="11" r="2.5" fill="#FCE4EC"/>
+    <circle cx="17" cy="16" r="2.5" fill="#F06292"/>
+    <circle cx="9"  cy="16" r="2"   fill="white"/>
+    <line x1="19" y1="19" x2="25" y2="25" stroke="#E91E8C" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="23" y1="23" x2="26" y2="22" stroke="#E91E8C" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+)
+
+const OutlineIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3"  y="3"  width="22" height="22" rx="3" stroke="#2E7D5E" strokeWidth="1.8"/>
+    <rect x="7"  y="7"  width="8"  height="6"  rx="2" stroke="#2E7D5E" strokeWidth="1.4"/>
+    <rect x="17" y="7"  width="7"  height="6"  rx="2" stroke="#2E7D5E" strokeWidth="1.4"/>
+    <rect x="7"  y="16" width="17" height="5"  rx="2" stroke="#2E7D5E" strokeWidth="1.4"/>
+  </svg>
+)
+
+const InstallIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="18" width="20" height="3" rx="1.5" fill="#7C4DFF" opacity="0.25"/>
+    <rect x="4" y="20" width="20" height="2" rx="1" fill="#7C4DFF"/>
+    <line x1="14" y1="4" x2="14" y2="17" stroke="#7C4DFF" strokeWidth="2" strokeLinecap="round"/>
+    <polyline points="8,12 14,18 20,12" stroke="#7C4DFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+  </svg>
+)
+
+const ClickIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6 L10 18 L13.5 15 L15.5 21 L17.5 20.3 L15.5 14.3 L20 14.3 Z" stroke="#E91E8C" strokeWidth="1.7" strokeLinejoin="round" fill="none"/>
+    <circle cx="6" cy="6" r="2" fill="#E91E8C" opacity="0.35"/>
+    <circle cx="22" cy="6" r="2" fill="#E91E8C" opacity="0.35"/>
+    <circle cx="6" cy="22" r="2" fill="#E91E8C" opacity="0.35"/>
+  </svg>
+)
+
+const ClipboardIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6" y="7" width="16" height="18" rx="3" stroke="#2E7D5E" strokeWidth="1.8"/>
+    <rect x="10" y="4" width="8" height="5" rx="2" stroke="#2E7D5E" strokeWidth="1.6" fill="white"/>
+    <line x1="10" y1="14" x2="18" y2="14" stroke="#2E7D5E" strokeWidth="1.5" strokeLinecap="round"/>
+    <line x1="10" y1="18" x2="15" y2="18" stroke="#2E7D5E" strokeWidth="1.5" strokeLinecap="round"/>
+    <polyline points="15,20 17,22 21,18" stroke="#2E7D5E" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+  </svg>
+)
+
 const featureCards = [
   {
-    icon: '📐',
+    icon: <RulerIcon />,
     title: 'Ruler',
     desc: 'Click twice to measure anything. Live w × h tooltip while you drag. Result lands in your clipboard automatically.',
     mini: '240 × 120 px',
     variant: 'lavender' as const,
   },
   {
-    icon: '🎨',
+    icon: <ColorPickerIcon />,
     title: 'Color Picker',
     desc: 'Native EyeDropper API. Get any pixel in HEX, RGB, HSL, or RGBA — your preferred format is copied instantly.',
     mini: '#B39DDB',
     variant: 'pink' as const,
   },
   {
-    icon: '🔲',
+    icon: <OutlineIcon />,
     title: 'Outline Mode',
     desc: 'Inspired by Pesticide. Drop a 1px outline on every element, color-coded by tag. Faster than any DevTools dance.',
     mini: '<div> <p> <span>',
@@ -393,19 +454,19 @@ const featureCards = [
 
 const steps = [
   {
-    icon: '⬇️',
+    icon: <InstallIcon />,
     title: 'Install',
     desc: 'Add PixelTape to Chrome in one click. No account, no setup.',
     variant: 'lavender' as const,
   },
   {
-    icon: '🖱️',
+    icon: <ClickIcon />,
     title: 'Click a tool',
     desc: 'Ruler, Color Picker, or Outline — pick one from the popup.',
     variant: 'pink' as const,
   },
   {
-    icon: '📋',
+    icon: <ClipboardIcon />,
     title: 'Get results',
     desc: 'Everything copies to your clipboard automatically. Done.',
     variant: 'mint' as const,
