@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import AppNav from '@/components/AppNav'
 import AppFooter from '@/components/AppFooter'
+import MoleculeBackground from '@/components/MoleculeBackground'
 import { projects } from '@/lib/projects'
 import styles from './page.module.css'
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <MoleculeBackground />
       <AppNav />
 
       <main>

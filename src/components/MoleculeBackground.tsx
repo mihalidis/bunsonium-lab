@@ -7,22 +7,19 @@ interface Atom {
   y: number
   vx: number
   vy: number
-  radius: number
+  r: number
   color: string
-  opacity: number
 }
 
 const COLORS = [
-  'rgba(249, 115, 22, 0.35)',   // orange
-  'rgba(168, 130, 255, 0.30)',  // purple
-  'rgba(236, 72, 153, 0.25)',   // pink
-  'rgba(96, 165, 250, 0.25)',   // blue
-  'rgba(74, 222, 128, 0.20)',   // green
+  'rgba(244, 162, 97, 0.55)',   // orange
+  'rgba(167, 139, 250, 0.50)',  // purple
+  'rgba(232, 121, 160, 0.45)',  // pink
+  'rgba(96, 165, 250, 0.40)',   // blue
 ]
 
-const BOND_COLOR = 'rgba(255, 255, 255, 0.08)'
 const BOND_DISTANCE = 160
-const ATOM_COUNT = 35
+const ATOM_DENSITY = 0.000035 // atoms per px² — scales with viewport
 
 export default function MoleculeBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -35,72 +32,74 @@ export default function MoleculeBackground() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    let width = 0
+    let height = 0
+    const dpr = Math.max(1, window.devicePixelRatio || 1)
+
     const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = document.documentElement.scrollHeight
+      width = window.innerWidth
+      height = document.documentElement.scrollHeight
+      canvas.width = width * dpr
+      canvas.height = height * dpr
+      canvas.style.width = width + 'px'
+      canvas.style.height = height + 'px'
+      ctx.setTransform(1, 0, 0, 1, 0, 0)
+      ctx.scale(dpr, dpr)
     }
 
     const initAtoms = () => {
-      atomsRef.current = Array.from({ length: ATOM_COUNT }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 3 + 1.5,
+      const count = Math.max(22, Math.min(55, Math.round(width * height * ATOM_DENSITY)))
+      atomsRef.current = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r: Math.random() * 2.2 + 1.4,
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
-        opacity: Math.random() * 0.5 + 0.3,
       }))
     }
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.clearRect(0, 0, width, height)
       const atoms = atomsRef.current
 
-      // Draw bonds
+      // Bonds
       for (let i = 0; i < atoms.length; i++) {
         for (let j = i + 1; j < atoms.length; j++) {
           const dx = atoms[i].x - atoms[j].x
           const dy = atoms[i].y - atoms[j].y
-          const dist = Math.sqrt(dx * dx + dy * dy)
+          const dist = Math.hypot(dx, dy)
           if (dist < BOND_DISTANCE) {
-            const alpha = (1 - dist / BOND_DISTANCE) * 0.15
+            const alpha = (1 - dist / BOND_DISTANCE) * 0.22
+            ctx.strokeStyle = `rgba(240, 235, 255, ${alpha})`
+            ctx.lineWidth = 0.5
             ctx.beginPath()
             ctx.moveTo(atoms[i].x, atoms[i].y)
             ctx.lineTo(atoms[j].x, atoms[j].y)
-            ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`
-            ctx.lineWidth = 0.5
             ctx.stroke()
           }
         }
       }
 
-      // Draw atoms
-      for (const atom of atoms) {
-        ctx.beginPath()
-        ctx.arc(atom.x, atom.y, atom.radius, 0, Math.PI * 2)
-        ctx.fillStyle = atom.color
-        ctx.fill()
-
-        // Subtle glow
-        ctx.beginPath()
-        ctx.arc(atom.x, atom.y, atom.radius * 3, 0, Math.PI * 2)
-        const grad = ctx.createRadialGradient(
-          atom.x, atom.y, atom.radius * 0.5,
-          atom.x, atom.y, atom.radius * 3
-        )
-        grad.addColorStop(0, atom.color)
+      // Atoms + glow
+      for (const a of atoms) {
+        const grad = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, a.r * 5)
+        grad.addColorStop(0, a.color)
         grad.addColorStop(1, 'transparent')
         ctx.fillStyle = grad
+        ctx.beginPath()
+        ctx.arc(a.x, a.y, a.r * 5, 0, Math.PI * 2)
         ctx.fill()
-      }
 
-      // Update positions
-      for (const atom of atoms) {
-        atom.x += atom.vx
-        atom.y += atom.vy
+        ctx.fillStyle = a.color.replace(/[\d.]+\)$/, '0.9)')
+        ctx.beginPath()
+        ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2)
+        ctx.fill()
 
-        if (atom.x < 0 || atom.x > canvas.width) atom.vx *= -1
-        if (atom.y < 0 || atom.y > canvas.height) atom.vy *= -1
+        a.x += a.vx
+        a.y += a.vy
+        if (a.x < 0 || a.x > width) a.vx *= -1
+        if (a.y < 0 || a.y > height) a.vy *= -1
       }
 
       animRef.current = requestAnimationFrame(draw)
@@ -112,9 +111,13 @@ export default function MoleculeBackground() {
 
     const resizeObserver = new ResizeObserver(() => {
       resize()
+      // keep atoms but clamp them into the new viewport
+      for (const a of atomsRef.current) {
+        if (a.x > width) a.x = width
+        if (a.y > height) a.y = height
+      }
     })
     resizeObserver.observe(document.documentElement)
-
     window.addEventListener('resize', resize)
 
     return () => {
@@ -127,6 +130,7 @@ export default function MoleculeBackground() {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       style={{
         position: 'fixed',
         top: 0,

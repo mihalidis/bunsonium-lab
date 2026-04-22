@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import AppNav from '@/components/AppNav'
 import AppFooter from '@/components/AppFooter'
+import MoleculeBackground from '@/components/MoleculeBackground'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <MoleculeBackground />
       <AppNav />
 
       <main className={styles.main}>
