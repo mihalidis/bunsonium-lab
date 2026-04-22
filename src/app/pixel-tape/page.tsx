@@ -20,7 +20,7 @@ const dmMono = DM_Mono({
   display: 'swap',
 })
 
-const CHROME_WEB_STORE_URL = 'https://chromewebstore.google.com/'
+const CHROME_WEB_STORE_URL = 'https://chromewebstore.google.com/detail/pixeltape-%E2%80%94-%C3%B6l%C3%A7-renk-se%C3%A7/fpcibdfbiahjjkoohceoddpimebjfcmb'
 const GITHUB_URL = 'https://github.com/mihalidis/PixelTape'
 
 export const metadata: Metadata = {
