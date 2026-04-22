@@ -42,7 +42,8 @@ export const projects: Project[] = [
     tag: 'Chrome Extension',
     accent: '#9575cd',
     techs: ['Chrome API', 'Vanilla JS', 'EyeDropper'],
-    status: 'in review',
+    status: 'live',
+    url: 'https://chromewebstore.google.com/detail/pixeltape-%E2%80%94-%C3%B6l%C3%A7-renk-se%C3%A7/fpcibdfbiahjjkoohceoddpimebjfcmb',
   },
   {
     slug: 'ghosty-raffle',
