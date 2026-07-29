@@ -57,6 +57,16 @@ export const projects: Project[] = [
     url: 'https://ghosty-raffle.vercel.app',
   },
   {
+    slug: 'dynamiqr',
+    title: 'DynamiQR',
+    desc: 'Kendi sunucunuzda çalışan dinamik QR yönetimi. Basılan kod hiç değişmez — sadece yönlendirdiği hedef URL değişir.',
+    icon: '🔗',
+    tag: 'Web App',
+    accent: '#6366f1',
+    techs: ['Next.js', 'Prisma', 'Neon'],
+    status: 'live',
+  },
+  {
     slug: 'inventqry',
     title: 'InventQRy',
     desc: 'QR code-powered home inventory app. Stick a code on any shelf, scan to see what\'s inside.',
