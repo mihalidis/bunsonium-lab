@@ -398,7 +398,7 @@
 /* ── Gallery ──────────────────────────────────── */
 .galleryGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
   gap: 16px;
 }
@@ -413,8 +413,6 @@
   box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 .shotWide { grid-column: span 2; }
-.shotTall { grid-row: span 2; }
-.shotTall .screenshotImg { height: 100%; object-fit: cover; object-position: top; }
 .shot figcaption {
   font-size: 12px;
   color: var(--fg-subtle);
@@ -500,8 +498,6 @@
   .forgeGrid { grid-template-columns: 1fr; }
   .galleryGrid { grid-template-columns: 1fr 1fr; }
   .shotWide { grid-column: span 2; }
-  .shotTall { grid-row: auto; grid-column: span 2; }
-  .shotTall .screenshotImg { max-height: 520px; }
 }
 @media (max-width: 768px) {
   .hero { padding: 120px 20px 70px; min-height: auto; }
@@ -516,7 +512,7 @@
   .ctaInner { padding: 48px 24px; }
   .featuresGrid { grid-template-columns: 1fr; }
   .galleryGrid { grid-template-columns: 1fr; }
-  .shotWide, .shotTall { grid-column: auto; }
+  .shotWide { grid-column: auto; }
   .step { grid-template-columns: 24px minmax(0, 1fr); }
   .stepMeta { display: none; }
 }

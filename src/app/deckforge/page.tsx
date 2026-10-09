@@ -221,17 +221,7 @@ export default function DeckForgePage() {
               />
               <figcaption>Why these cards — game plan, synergies, mulligan</figcaption>
             </figure>
-            <figure className={`${styles.shot} ${styles.shotTall}`}>
-              <Image
-                src="/deckforgeassets/mobile-landing.png"
-                alt="DeckForge landing page on a phone"
-                width={585}
-                height={1380}
-                className={styles.screenshotImg}
-              />
-              <figcaption>Works on a phone</figcaption>
-            </figure>
-            <figure className={`${styles.shot} ${styles.shotWide}`}>
+            <figure className={styles.shot}>
               <Image
                 src="/deckforgeassets/result-shaman.png"
                 alt="An Elemental Shaman deck with mana curve and verified-by-Blizzard badge"
@@ -241,7 +231,7 @@ export default function DeckForgePage() {
               />
               <figcaption>Mana curve, dust cost, verified by Blizzard</figcaption>
             </figure>
-            <figure className={`${styles.shot} ${styles.shotWide}`}>
+            <figure className={styles.shot}>
               <Image
                 src="/deckforgeassets/landing.png"
                 alt="DeckForge landing page with the prompt box and class chips"
