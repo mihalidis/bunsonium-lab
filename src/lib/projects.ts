@@ -67,6 +67,17 @@ export const projects: Project[] = [
     status: 'live',
   },
   {
+    slug: 'deckforge',
+    title: 'DeckForge',
+    desc: 'AI deck builder for Hearthstone. Describe the deck you want, get a legal 30-card Standard deck and a code that pastes straight into the game.',
+    icon: '⚒️',
+    tag: 'Web App',
+    accent: '#e0a64b',
+    techs: ['Next.js', 'Vercel AI SDK', 'Blizzard API'],
+    status: 'live',
+    url: 'https://deck-forge-eosin.vercel.app',
+  },
+  {
     slug: 'inventqry',
     title: 'InventQRy',
     desc: 'QR code-powered home inventory app. Stick a code on any shelf, scan to see what\'s inside.',
